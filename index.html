@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Time clock</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script>
+        let date;
+        let time;
+        let a;
+        const options = {weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'};
+        setInterval(() => {
+        a = new Date();
+        date = a.toLocaleDateString(undefined, options);
+        time =  a.getHours() + ' : ' + a.getMinutes()  + ' : ' + a.getSeconds();
+        document.getElementById('time').innerHTML = time +"<br>on "+ date;
+    }, 500);
+    </script>
+</head>
+  <body>
+      <div class="container">
+        <div class="container my-5">
+            <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+              <h1 class="text-body-emphasis">Current time is : <span id="time">.......</span></h1>
+              <p class="col-lg-6 mx-auto mb-4">
+                What you saw above is the only and last time you're seeing that.<br> Don't ever waste time it's never going to come back again
+              </p>
+              <button class="btn btn-secondary px-5 mb-5" type="button">
+               Stop watching time and do work
+              </button>
+            </div>
+          </div>
+
+
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
